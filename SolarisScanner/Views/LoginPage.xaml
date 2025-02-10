@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolarisScanner.Views.LoginPage"
+             >
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
+
+        <!-- Champ pour le nom d'utilisateur -->
+        <Entry Placeholder="Nom d'utilisateur" 
+               Text="{Binding Username}" 
+               Keyboard="Email" 
+               Margin="0,0,0,10"/>
+
+        <!-- Champ pour le mot de passe -->
+        <Entry Placeholder="Mot de passe" 
+               Text="{Binding Password}" 
+               IsPassword="True" 
+               Margin="0,0,0,10"/>
+
+        <!-- Bouton de connexion -->
+        <Button Text="Se connecter" 
+                Command="{Binding LoginCommand}" 
+                IsEnabled="{Binding IsNotBusy}" 
+                BackgroundColor="#0078D4" 
+                TextColor="White" 
+                Margin="0,0,0,10"/>
+
+        <!-- Affichage du loader pendant que l'utilisateur est connecté -->
+        <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                           IsVisible="{Binding IsBusy}" 
+                           VerticalOptions="CenterAndExpand"/>
+
+        <!-- Affichage d'un message d'erreur si nécessaire -->
+        <Label Text="{Binding ErrorMessage}" 
+               TextColor="Red" 
+               IsVisible="{Binding IsNotBusy}" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalTextAlignment="Center"/>
+    </StackLayout>
+</ContentPage>

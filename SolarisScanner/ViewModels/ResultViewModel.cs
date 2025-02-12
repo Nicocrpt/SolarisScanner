@@ -1,13 +1,18 @@
+using CommunityToolkit.Mvvm.ComponentModel;
 using SolarisScanner.Models;
 
 namespace SolarisScanner.ViewModels;
 
-public class ResultViewModel: BaseViewModel
+public partial class ResultViewModel: BaseViewModel
 {
-    private readonly Reservation _reservation;
+    [ObservableProperty] 
+    private Reservation reservation;
+    
+    public string Status => reservation.Status;
+
 
     public ResultViewModel(Reservation reservation)
     {
-        _reservation = reservation;
+        Reservation = reservation;
     }
 }

@@ -3,14 +3,25 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
-             x:Class="SolarisScanner.Views.ScanPage">
+             xmlns:scanner="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
+             x:Class="SolarisScanner.Views.ScanPage"
+             >
              
     <VerticalStackLayout VerticalOptions="Fill" HorizontalOptions="Fill">
-        <zxing:CameraBarcodeReaderView
-            x:Name="Camera"
-            IsDetecting="True"
-            BarcodesDetected="CameraView_OnBarcodesDetected"
-            />
-        
+        <!-- <zxing:CameraBarcodeReaderView -->
+        <!--     x:Name="Camera" -->
+        <!--     IsDetecting="True" -->
+        <!--     BarcodesDetected="CameraView_OnBarcodesDetected" -->
+        <!--     /> -->
+        <scanner:CameraView
+            x:Name="Scanner"
+            HeightRequest="1000"
+            WidthRequest="500"
+            BarcodeSymbologies="All"
+            CameraEnabled="True"
+            ForceInverted="True"
+            CaptureQuality="High"
+            PauseScanning="False"
+            OnDetectionFinished="CameraView_OnOnDetectionFinished"/>
     </VerticalStackLayout>
 </ContentPage>

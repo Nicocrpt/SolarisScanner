@@ -15,36 +15,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e593d18-5bb9-4288-9cd8-6755ee707712" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Fonts/logo-font.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/qrlogo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Services/IReservationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Services/ReservationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/MainViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ScanViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/AppShell.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/AppShell.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/MauiProgram.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Models/Reservation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Models/Reservation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainActivity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainActivity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/Resources/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/Resources/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Resources/Styles/Colors.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Styles/Colors.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Resources/Styles/Styles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Styles/Styles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/LoginService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/SolarisScanner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/SolarisScanner.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/LoginViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/LoginPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/LoginPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +46,7 @@
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bff41c72e6acff5b390a6e4f899a56b47afff2/Resources_Styles_Colors.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainActivity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainApplication.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -139,7 +119,7 @@
       <option name="presentableId" value="Default" />
       <updated>1739114525374</updated>
       <workItem from="1739114526881" duration="2582000" />
-      <workItem from="1739131961649" duration="50282000" />
+      <workItem from="1739131961649" duration="55866000" />
     </task>
     <servers />
   </component>
@@ -152,7 +132,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -165,56 +157,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SolarisScanner/ViewModels/ScanViewModel.cs</url>
-          <line>22</line>
-          <properties documentPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ScanViewModel.cs" containingFunctionPresentation="Method 'ProcessBarcode'">
+          <url>file://$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs</url>
+          <line>17</line>
+          <properties documentPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" containingFunctionPresentation="Constructor 'ResultPage'">
             <startOffsets>
-              <option value="584" />
+              <option value="440" />
             </startOffsets>
             <endOffsets>
-              <option value="664" />
+              <option value="486" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SolarisScanner/ViewModels/ScanViewModel.cs</url>
-          <line>23</line>
-          <properties documentPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ScanViewModel.cs" containingFunctionPresentation="Method 'ProcessBarcode'">
-            <startOffsets>
-              <option value="671" />
-            </startOffsets>
-            <endOffsets>
-              <option value="728" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs</url>
-          <line>26</line>
-          <properties documentPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" containingFunctionPresentation="Method 'OnAppearing'">
+          <line>18</line>
+          <properties documentPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" containingFunctionPresentation="Constructor 'ResultPage'">
             <startOffsets>
-              <option value="678" />
+              <option value="495" />
             </startOffsets>
             <endOffsets>
-              <option value="727" />
+              <option value="523" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs</url>
-          <line>27</line>
-          <properties documentPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" containingFunctionPresentation="Method 'OnAppearing'">
-            <startOffsets>
-              <option value="736" />
-            </startOffsets>
-            <endOffsets>
-              <option value="772" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="34" />
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

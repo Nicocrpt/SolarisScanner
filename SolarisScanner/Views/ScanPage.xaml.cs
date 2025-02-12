@@ -1,4 +1,7 @@
 
+using BarcodeScanning;
+using Microsoft.Maui.Controls.PlatformConfiguration;
+using SolarisScanner.Models;
 using SolarisScanner.ViewModels;
 using ZXing.Net.Maui;
 
@@ -10,54 +13,88 @@ public partial class ScanPage : ContentPage
     public ScanPage()
     {
         InitializeComponent();
-        Camera.Options = new BarcodeReaderOptions
-        {
-            AutoRotate = false,
-            TryInverted = true,
-            Multiple = false,
-            Formats = ZXing.Net.Maui.BarcodeFormat.QrCode,
-        };
+        // Camera.Options = new BarcodeReaderOptions
+        // {
+        //     AutoRotate = false,
+        //     TryInverted = true,
+        //     Multiple = false,
+        //     Formats = ZXing.Net.Maui.BarcodeFormat.QrCode,
+        // };
+        
+        
         _viewModel = new ScanViewModel(Navigation);
         BindingContext = _viewModel;
-        
-        
-        Unloaded += (sender, e) =>
-        {
-            Camera.IsEnabled = false;  // Désactivez la caméra mais ne la déconnectez pas
-        };
+        Scanner.CameraEnabled = true;
+
+
+        // Unloaded += (sender, e) =>
+        // {
+        //     Camera.IsEnabled = false;  // Désactivez la caméra mais ne la déconnectez pas
+        // };
 
     }
     
-    protected override void OnAppearing()
+    protected async override void OnAppearing()
     {
         base.OnAppearing();
+        await Methods.AskForRequiredPermissionAsync();
 
         // Si BarcodeReader est activé, assure-toi qu'il est démarré
 
-        Camera.IsEnabled = true;
-        Camera.IsDetecting = true;
+        Scanner.CameraEnabled = true;
+        Scanner.PauseScanning = false;
+        // Camera.IsEnabled = true;
+        // Camera.IsDetecting = true;
     }
     
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
+        Scanner.CameraEnabled = false;
 
-        // Arrêter la détection et libérer les ressources
-        Camera.IsDetecting = false;
-        Camera.IsEnabled = false;
+        // Camera.IsDetecting = false;
+        // Camera.IsEnabled = false;
     }
     
-    void CameraView_OnBarcodesDetected(object? sender, BarcodeDetectionEventArgs e)
+    private void ContentPage_Unloaded(object sender, EventArgs e)
     {
-        Camera.IsDetecting = false;
-        if (e.Results != null && e.Results.Length > 0)
+        Scanner.Handler?.DisconnectHandler();
+    }
+    
+    // void CameraView_OnBarcodesDetected(object? sender, BarcodeDetectionEventArgs e)
+    // {
+    //     // Camera.IsDetecting = false;
+    //     // if (e.Results != null && e.Results.Length > 0)
+    //     // {
+    //     //     Dispatcher.Dispatch( () =>
+    //     //     {
+    //     //         string code = e.Results[0].Value;
+    //     //         _viewModel.ProcessBarcode(code);
+    //     //     });
+    //     //     
+    //     // }
+    // }
+
+    void CameraView_OnOnDetectionFinished(object? sender, OnDetectionFinishedEventArg e)
+    {   
+        
+        Scanner.PauseScanning = true;
+        if (e.BarcodeResults.Count > 0)
         {
-            Dispatcher.Dispatch( () =>
+            if (DeviceInfo.Platform == DevicePlatform.Android)
             {
-                string code = e.Results[0].Value;
-                _viewModel.ProcessBarcode(code);
-            });
+                // Appelle directement la vibration sans classe supplémentaire
+                Vibration.Vibrate(TimeSpan.FromMilliseconds(100));
+            }
             
+            Dispatcher.Dispatch(() =>
+            {
+                _viewModel.ProcessBarcode(e.BarcodeResults.ElementAt(0).DisplayValue);
+            });
+        }
+        else
+        {
+            Scanner.PauseScanning = false;
         }
     }
 }

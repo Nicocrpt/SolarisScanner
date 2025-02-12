@@ -23,15 +23,14 @@ public partial class ResultPage : ContentPage
     {
         base.OnAppearing();
         
-        int count = Navigation.NavigationStack.Count;
-        var previousPage = Navigation.NavigationStack[1];
-        Navigation.RemovePage(previousPage);
+        // int count = Navigation.NavigationStack.Count;
+        // var previousPage = Navigation.NavigationStack[1];
+        // Navigation.RemovePage(previousPage);
     }
 
-    protected overri
-        de bool OnBackButtonPressed()
+    protected override bool OnBackButtonPressed()
     {
-        Navigation.InsertPageBefore(new ScanPage(), this);
+        // Navigation.InsertPageBefore(new ScanPage(), this);
         return base.OnBackButtonPressed();
         
     }

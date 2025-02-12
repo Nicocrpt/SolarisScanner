@@ -5,7 +5,6 @@ using Microsoft.Extensions.Logging;
 using SolarisScanner.Services;
 using SolarisScanner.ViewModels;
 using SolarisScanner.Views;
-using ZXing.Net.Maui.Controls;
 
 namespace SolarisScanner;
 

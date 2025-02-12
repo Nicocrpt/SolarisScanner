@@ -1,18 +1,46 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using SolarisScanner.Models;
+using SolarisScanner.Services;
 
 namespace SolarisScanner.ViewModels;
 
 public partial class ResultViewModel: BaseViewModel
 {
-    [ObservableProperty] 
-    private Reservation reservation;
+    private readonly IReservationService _reservationService;
     
-    public string Status => reservation.Status;
+    [ObservableProperty]
+    private Reservation reservation;
 
+    [ObservableProperty] 
+    Color statusColor;
+    
+    [ObservableProperty]
+    private bool isLoading;
 
-    public ResultViewModel(Reservation reservation)
+    public ResultViewModel(INavigation navigation)
     {
-        Reservation = reservation;
+        _reservationService = new ReservationService();
+    }
+    
+    
+    public async Task ProcessBarcode(string barcode)
+    {
+        try
+        {
+            IsLoading = true;
+            Reservation result = await _reservationService.ProcessReservation(barcode);
+            Reservation = result;
+            StatusColor = !result.Status.Contains("déjà") ? Colors.Green : Colors.Red;
+        }
+        catch (Exception ex)
+        {
+            await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+        }
+        finally
+        {
+            IsLoading = false;
+        }
+        
+        
     }
 }

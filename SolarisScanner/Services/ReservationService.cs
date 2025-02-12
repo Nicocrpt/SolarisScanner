@@ -24,7 +24,7 @@ public class ReservationService : IReservationService
             {
                 return new Reservation(
                     jsonResponse["success"]?.ToString(),
-                    jsonResponse["data"]["film"]["image"]?.ToString(),
+                    jsonResponse["data"]["film"]["image"]?.ToString().Replace("original", "w500"),
                     jsonResponse["data"]["film"]["titre"]?.ToString(),
                     jsonResponse["data"]["salle"]?.ToString()
                 );

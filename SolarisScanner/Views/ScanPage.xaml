@@ -2,22 +2,24 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              xmlns:scanner="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
              x:Class="SolarisScanner.Views.ScanPage"
              >
              
     <VerticalStackLayout VerticalOptions="Fill" HorizontalOptions="Fill">
-        <!-- <zxing:CameraBarcodeReaderView -->
-        <!--     x:Name="Camera" -->
-        <!--     IsDetecting="True" -->
-        <!--     BarcodesDetected="CameraView_OnBarcodesDetected" -->
-        <!--     /> -->
+        
+        <ActivityIndicator IsRunning="{Binding IsLoading}" 
+                           IsVisible="{Binding IsLoading}" 
+                           Color="{AppThemeBinding Light=Black, Dark=White}"
+                           Margin="0,200,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+        
         <scanner:CameraView
             x:Name="Scanner"
             HeightRequest="1000"
             WidthRequest="500"
-            BarcodeSymbologies="All"
+            BarcodeSymbologies="QRCode"
             CameraEnabled="True"
             ForceInverted="True"
             CaptureQuality="High"

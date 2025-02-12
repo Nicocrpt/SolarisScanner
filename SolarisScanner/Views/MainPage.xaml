@@ -1,10 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SolarisScanner.Views.MainPage">
+             x:Class="SolarisScanner.Views.MainPage"
+             >
 
-    <ScrollView>
+    <VerticalStackLayout VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0,40,0,0">
         
-    </ScrollView>
+        <Button
+            HeightRequest="200"
+            WidthRequest="200"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            ImageSource="qrlogo.svg"
+            BackgroundColor="Transparent"
+            BorderColor="WhiteSmoke"
+            BorderWidth="2"
+            Command="{Binding goToScanPageCommand}" 
+            IsEnabled="{Binding IsNotBusy}" 
+        />
+            
+            
+    </VerticalStackLayout>
 
 </ContentPage>

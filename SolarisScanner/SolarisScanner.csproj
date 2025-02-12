@@ -19,6 +19,7 @@
         <SingleProject>true</SingleProject>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <UseHotReload>true</UseHotReload>
 
         <!-- Display name -->
         <ApplicationTitle>SolarisScanner</ApplicationTitle>
@@ -57,12 +58,15 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="BarcodeScanning.Native.Maui" Version="1.7.3" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1"/>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="RestSharp" Version="112.1.0" />
+        <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
     </ItemGroup>
 
     <ItemGroup>

@@ -25,11 +25,11 @@ public class LoginService : ILoginService
             JObject jsonResponse = JObject.Parse(response.Content);
             var success = jsonResponse["success"]?.ToObject<bool>() ?? false;
             var token = jsonResponse["user"]?["token"]?.ToString();
-            // Vérifier si la requête a échoué (par exemple, code de statut != 200)
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
-                throw new Exception($"Erreur HTTP: {response.StatusCode}");
-            }
+
+            // if (response.StatusCode != HttpStatusCode.OK)
+            // {
+            //     throw new Exception($"Erreur HTTP: {response.StatusCode}");
+            // }
 
             // Vérifier que le token est présent dans la réponse
             if (success && !string.IsNullOrEmpty(token))

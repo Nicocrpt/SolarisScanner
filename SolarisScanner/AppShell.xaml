@@ -8,8 +8,14 @@
     Title="SolarisScanner">
 
     <ShellContent
-        Title="Home"
+        Title="Accueil"
         ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:ScanPage}"
+        Route="ScanPage" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:ResultPage}"
+        Route="ResultPage" />
 
 </Shell>

@@ -10,6 +10,17 @@ namespace SolarisScanner.ViewModels;
 public partial class LoginViewModel : BaseViewModel
 {
     private readonly ILoginService _loginService;
+    private string _errorMessage;
+    public string ErrorMessage
+    {
+        get => _errorMessage;
+        set
+        {
+            _errorMessage = value;
+            OnPropertyChanged();  // Assure-toi d'avoir INotifyPropertyChanged implémenté
+        }
+    }
+    public bool HasError => !string.IsNullOrEmpty(ErrorMessage);
 
     [ObservableProperty] 
     string _username;
@@ -27,12 +38,11 @@ public partial class LoginViewModel : BaseViewModel
 
     public async Task LoginAsync()
     {
-        Console.WriteLine("hello");
         IsBusy = true; // Début de l'opération
         try
         {
             // Appel à LoginService pour tenter la connexion
-            User user = await _loginService.LoginAsync(Username, Password); // On récupère un objet User
+            User user = await _loginService.LoginAsync(Username, Password);
 
             // Logique après une connexion réussie (par exemple, stocker le token)
             if (user != null && !string.IsNullOrEmpty(user.token))
@@ -40,17 +50,20 @@ public partial class LoginViewModel : BaseViewModel
                 // Tu peux aussi stocker le token dans un service ou un store pour l'utiliser plus tard
                 // Exemple : _tokenService.SaveToken(user.Token);
                 await SecureStorage.SetAsync("user_token", user.token);
+                await SecureStorage.SetAsync("current_timestamp", DateTime.Now.ToString("o"));
                 
                 Application.Current.MainPage = new AppShell();
             }
             else
             {
+                ErrorMessage = "Nom d'utilisateur ou mot de passe incorrect.";
                 HandleError("Erreur : Impossible de récupérer le token.");
-                await Application.Current.MainPage.DisplayAlert("Erreur", "Nom d'utilisateur ou mot de passe incorrect.", "OK");
+                // await Application.Current.MainPage.DisplayAlert("Erreur", "Nom d'utilisateur ou mot de passe incorrect.", "OK");
             }
         }
         catch (Exception ex)
         {
+            
             HandleError("Erreur lors de la connexion : " + ex.Message);
         }
         finally

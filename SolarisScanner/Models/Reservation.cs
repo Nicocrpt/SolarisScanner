@@ -6,10 +6,10 @@ public class Reservation
     public string? MoviePoster { get; set; }
     public string? MovieTitle { get; set; }
     public string? SessionDatetime { get; set; }
-    public int? SessionRoom { get; set; }
+    public string? SessionRoom { get; set; }
     
     //Constructeur
-    public Reservation(string status, string moviePoster, string movieTitle, string sessionDatetime, int sessionRoom)
+    public Reservation(string status, string moviePoster = "", string movieTitle = "", string sessionRoom = "", string sessionDatetime = "")
     {
         this.Status = status;
         this.MoviePoster = moviePoster;

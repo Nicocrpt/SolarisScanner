@@ -4,38 +4,70 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SolarisScanner.Views.LoginPage"
              >
-    <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
 
-        <!-- Champ pour le nom d'utilisateur -->
-        <Entry Placeholder="Nom d'utilisateur" 
-               Text="{Binding Username}" 
-               Keyboard="Email" 
-               Margin="0,0,0,10"/>
+       <Grid Padding="0,80,0, 0">
+              <Grid.RowDefinitions>
+                     <RowDefinition Height="*" />
+                     <RowDefinition Height="3*" />
+                     <RowDefinition Height="0.2*"/>
+              </Grid.RowDefinitions>
+              
+              <StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
+                     <Image Source="logo.svg"
+                            HeightRequest="130"
+                            WidthRequest="130"
+                            Aspect="AspectFit"
+                            xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+                     <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Orange" />
+                     </Image.Behaviors>
+                            
 
-        <!-- Champ pour le mot de passe -->
-        <Entry Placeholder="Mot de passe" 
-               Text="{Binding Password}" 
-               IsPassword="True" 
-               Margin="0,0,0,10"/>
+                     </Image>
+                     <Label Text="SOLARIS SCANNER" FontSize="20" FontFamily="logoFont" Margin="0,20,0,0"/>
+              </StackLayout>
+              <StackLayout Padding="20, 100, 20, 20" VerticalOptions="Start" Grid.Row="1">
+              
+                     <!-- Champ pour le nom d'utilisateur -->
+                     <Entry Placeholder="Nom d'utilisateur" 
+                            
+                            Text="{Binding Username}" 
+                            Keyboard="Email" 
+                            Margin="0,0,0,10"/>
 
-        <!-- Bouton de connexion -->
-        <Button Text="Se connecter" 
-                Command="{Binding LoginCommand}" 
-                IsEnabled="{Binding IsNotBusy}" 
-                BackgroundColor="#0078D4" 
-                TextColor="White" 
-                Margin="0,0,0,10"/>
+                     <!-- Champ pour le mot de passe -->
+                     <Entry Placeholder="Mot de passe" 
+                            Text="{Binding Password}" 
+                            IsPassword="True" 
+                            Margin="0,0,0,10"/>
 
-        <!-- Affichage du loader pendant que l'utilisateur est connecté -->
-        <ActivityIndicator IsRunning="{Binding IsBusy}" 
-                           IsVisible="{Binding IsBusy}" 
-                           VerticalOptions="CenterAndExpand"/>
+                     <!-- Bouton de connexion -->
+                     <Button Text="Se connecter" 
+                             Command="{Binding LoginCommand}" 
+                             IsEnabled="{Binding IsNotBusy}" 
+                             BackgroundColor="{AppThemeBinding Light=Black, Dark=White}" 
+                             TextColor="{AppThemeBinding Light=White, Dark=Black}" 
+                             Margin="0,0,0,10"
+                             CornerRadius="4"/>
 
-        <!-- Affichage d'un message d'erreur si nécessaire -->
-        <Label Text="{Binding ErrorMessage}" 
-               TextColor="Red" 
-               IsVisible="{Binding IsNotBusy}" 
-               VerticalOptions="CenterAndExpand" 
-               HorizontalTextAlignment="Center"/>
-    </StackLayout>
+                     <!-- Affichage du loader pendant que l'utilisateur est connecté -->
+                     <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                                        IsVisible="{Binding IsBusy}" 
+                                        VerticalOptions="CenterAndExpand"/>
+
+                     <!-- Affichage d'un message d'erreur si nécessaire -->
+                     <Label Text="{Binding ErrorMessage}" 
+                            TextColor="red" 
+                            IsVisible="{Binding IsNotBusy}" 
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalTextAlignment="Center"/>
+              </StackLayout>
+              <StackLayout Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center">
+                     <Label  Text="Copyright Nicolas Carpita" FontSize="10"/>
+              </StackLayout>
+              
+       </Grid>
+       
+
+       
 </ContentPage>

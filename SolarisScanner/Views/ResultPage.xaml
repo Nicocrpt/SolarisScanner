@@ -13,10 +13,23 @@
         <Label Text="{Binding Reservation.Status}" BackgroundColor="{ Binding StatusColor}" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="20" TextColor="White" Padding="0,10, 0,10" Margin="0,0,0, 10" HorizontalOptions="FillAndExpand"/>
         
         <VerticalStackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image
-                Source="{Binding Reservation.MoviePoster}" 
-                Margin="80,0,80,0" 
-                HorizontalOptions="Center"/>
+            <Grid Margin="80,0,80,0">
+                <Image
+                    x:Name="Poster"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Aspect="AspectFit"
+                    Source="{Binding Reservation.MoviePoster}" 
+                    HorizontalOptions="Center"/>
+                <ActivityIndicator
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    BindingContext="{x:Reference Poster}"
+                    HeightRequest="24"
+                    IsRunning="{Binding Path=IsLoading, Source={x:Reference Poster}}"
+                    IsVisible="{Binding Path=IsLoading, Source={x:Reference Poster}}" />
+            </Grid>
+            
             <Label Text="{Binding Reservation.MovieTitle}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" Padding="0,20,0,10"/>
             <Label Text="{Binding Reservation.SessionRoom}" HorizontalTextAlignment="Center" FontSize="30"></Label>
         </VerticalStackLayout>

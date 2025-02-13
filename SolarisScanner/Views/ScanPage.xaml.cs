@@ -1,4 +1,5 @@
 
+using System.Diagnostics;
 using BarcodeScanning;
 using Microsoft.Maui.Controls.PlatformConfiguration;
 using SolarisScanner.Models;
@@ -9,11 +10,14 @@ namespace SolarisScanner.Views;
 public partial class ScanPage : ContentPage
 {
     private readonly ScanViewModel _viewModel;
+    
+    private bool _isScanning;
     public ScanPage()
     {
         InitializeComponent();
-        _viewModel = new ScanViewModel(Navigation);
+        _isScanning = true;
         BindingContext = _viewModel;
+        _viewModel = new ScanViewModel(Navigation);
         Scanner.CameraEnabled = true;
     }
     
@@ -33,28 +37,46 @@ public partial class ScanPage : ContentPage
     }
 
     void CameraView_OnOnDetectionFinished(object? sender, OnDetectionFinishedEventArg e)
-    {   
-        Scanner.PauseScanning = true;
-        if (e.BarcodeResults.Count > 0)
+    {
+        if (_isScanning)
         {
-            if (DeviceInfo.Platform == DevicePlatform.Android)
+            Scanner.PauseScanning = true;
+            if (e.BarcodeResults.Count > 0)
             {
-                // Appelle directement la vibration sans classe supplémentaire
-                Vibration.Vibrate(TimeSpan.FromMilliseconds(100));
-            }
+
+                string code = e.BarcodeResults.ElementAt(0).DisplayValue;
+                if (SecureStorage.GetAsync("barcode").Result == null)
+                {
+                    if (DeviceInfo.Platform == DevicePlatform.Android)
+                    {
+                        Vibration.Vibrate(TimeSpan.FromMilliseconds(100));
+                    }
+                    SecureStorage.SetAsync("barcode", code);
             
-            Dispatcher.Dispatch(() =>
+                    Dispatcher.Dispatch(async () =>
+                    {
+                        await Navigation.PushAsync(new ResultPage(code));
+                        SecureStorage.Remove("barcode");
+                    });
+                }
+            
+            }
+            else
             {
-                Navigation.PushAsync(new ResultPage(e.BarcodeResults.ElementAt(0).DisplayValue));
-            });
+                MainThread.BeginInvokeOnMainThread(async () =>
+                {
+                    await Task.Delay(500);
+                    Scanner.PauseScanning = false;
+                });
+            }
         }
-        else
-        {
-            MainThread.BeginInvokeOnMainThread(async () =>
-            {
-                await Task.Delay(1500);  // Attend 500 ms avant de reprendre la détection
-                Scanner.PauseScanning = false;  // Reprendre la détection
-            });
-        }
+    }
+    
+
+    async void Button_OnClicked(object? sender, EventArgs e)
+    {
+        _isScanning = !_isScanning;
+        ToggleScanButton.ImageSource = _isScanning ? "pausescan.svg" : "playscan.svg";
+        ToggleScanButton.BackgroundColor = _isScanning ? Colors.DarkOrange : Colors.OliveDrab;
     }
 }

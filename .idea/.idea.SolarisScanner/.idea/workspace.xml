@@ -15,15 +15,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e593d18-5bb9-4288-9cd8-6755ee707712" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/pausescan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/playscan.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/MauiProgram.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/ReservationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/ReservationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/SolarisScanner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/SolarisScanner.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/ScanViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ScanViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs" afterDir="false" />
     </list>
@@ -69,7 +66,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Android.SolarisScanner.executor": "Run",
+    "Android.SolarisScanner.executor": "Debug",
     "Device#class com.jetbrains.rider.run.multiPlatform.ios.devices.IOSSimulatorKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider#iOS: SolarisScanner": "iPhone 16",
     "DeviceKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider": "Simulator",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -121,7 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1739114525374</updated>
       <workItem from="1739114526881" duration="2582000" />
-      <workItem from="1739131961649" duration="66300000" />
+      <workItem from="1739131961649" duration="76454000" />
     </task>
     <servers />
   </component>
@@ -154,5 +151,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs</url>
+          <line>77</line>
+          <properties documentPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs" containingFunctionPresentation="Method 'Button_OnClicked'">
+            <startOffsets>
+              <option value="2211" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2238" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -16,18 +16,16 @@ public partial class ScanViewModel : BaseViewModel
    [ObservableProperty]
    private bool isLoading;
 
+   [ObservableProperty] 
+   string imageSource;
+   
+
    public ScanViewModel(INavigation navigation)
    {
       _navigation = navigation;
       isLoading = true;
       _reservationService = new ReservationService();
+      imageSource = "pausescan.svg";
    }
-
-   // public async void ProcessBarcode(string barcode)
-   // {
-   //    Reservation reservation = await _reservationService.ProcessReservation(barcode);
-   //    await _navigation.PushAsync(new ResultPage(reservation));
-   //    
-   //    
-   // }
+   
 }

@@ -8,22 +8,38 @@
              
     <VerticalStackLayout VerticalOptions="Fill" HorizontalOptions="Fill">
         
-        <ActivityIndicator IsRunning="{Binding IsLoading}" 
-                           IsVisible="{Binding IsLoading}" 
-                           Color="{AppThemeBinding Light=Black, Dark=White}"
-                           Margin="0,200,0,0"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"/>
+        <!-- <ActivityIndicator IsRunning="{Binding IsLoading}"  -->
+        <!--                    IsVisible="{Binding IsLoading}"  -->
+        <!--                    Color="{AppThemeBinding Light=Black, Dark=White}" -->
+        <!--                    Margin="0,200,0,0" -->
+        <!--                    HorizontalOptions="Center" -->
+        <!--                    VerticalOptions="Center"/> -->
         
-        <scanner:CameraView
-            x:Name="Scanner"
-            HeightRequest="1000"
-            WidthRequest="500"
-            BarcodeSymbologies="QRCode"
-            CameraEnabled="True"
-            ForceInverted="True"
-            CaptureQuality="High"
-            PauseScanning="False"
-            OnDetectionFinished="CameraView_OnOnDetectionFinished"/>
+        <Frame Margin="10,5" CornerRadius="6" HeightRequest="500"
+               WidthRequest="300" Padding="0" BorderColor="Black" IsClippedToBounds="True">
+            <scanner:CameraView
+                x:Name="Scanner"
+                BarcodeSymbologies="QRCode"
+                CameraEnabled="True"
+                ForceInverted="True"
+                CaptureQuality="High"
+                PauseScanning="False"
+                OnDetectionFinished="CameraView_OnOnDetectionFinished"/>
+        </Frame>
+        
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+            <Button 
+                x:Name="ToggleScanButton"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                ContentLayout="Left, 10"
+                ImageSource="pausescan.svg"
+                HeightRequest="50"
+                FontAttributes="Bold"
+                BackgroundColor="DarkOrange"
+                Clicked="Button_OnClicked"
+                >
+            </Button>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

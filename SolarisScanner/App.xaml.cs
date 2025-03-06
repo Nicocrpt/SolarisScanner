@@ -24,7 +24,7 @@ public partial class App : Application
 
         if (isIdentified)
         {
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new ScanPage());
         }
         else
         {

@@ -14,34 +14,16 @@ public class LoginService : ILoginService
         _apiClient = new ApiClient();
     }
     
-    public async Task<User> LoginAsync(string username, string password)
+    public async Task<RestResponse> LoginAsync(string username, string password)
     {
         try
         {
             var body = new { name = username, password = password };
-            
-            var response = await _apiClient.PostAsync<RestResponse>("getAuth", body);
-            
-            JObject jsonResponse = JObject.Parse(response.Content);
-            var success = jsonResponse["success"]?.ToObject<bool>() ?? false;
-            var token = jsonResponse["user"]?["token"]?.ToString();
-
-            // if (response.StatusCode != HttpStatusCode.OK)
-            // {
-            //     throw new Exception($"Erreur HTTP: {response.StatusCode}");
-            // }
-
-            // Vérifier que le token est présent dans la réponse
-            if (success && !string.IsNullOrEmpty(token))
-            {
-                return new User(token,jsonResponse["name"]?.ToString());
-            }
-
-            return null;
+            return await _apiClient.PostAsync<RestResponse>("getAuth", body);
         }
         catch (Exception ex)
         {
-            // Si une exception se produit, la relayer
+
             throw new Exception("Erreur de connexion : " + ex.Message);
         }
     }

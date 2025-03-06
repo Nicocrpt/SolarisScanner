@@ -6,12 +6,12 @@ namespace SolarisScanner.ViewModels;
 public class MainViewModel : BaseViewModel
 {
     private readonly INavigation _navigation;
-    public IRelayCommand goToScanPageCommand { get; }
+    public IRelayCommand GoToScanPageCommand { get; }
 
     public MainViewModel(INavigation navigation)
     {
         _navigation = navigation;
-        goToScanPageCommand = new RelayCommand(async () => await _navigation.PushAsync(new ScanPage()));
+        GoToScanPageCommand = new RelayCommand( () => _navigation.PushAsync(new ScanPage()));
     }
     
     

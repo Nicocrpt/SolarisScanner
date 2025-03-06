@@ -18,12 +18,7 @@ public partial class ResultPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        await _viewModel.ProcessBarcode(_barcode);
-    }
-
-    private async void OnBackButtonClicked(object sender, EventArgs e)
-    {
-        await Navigation.PopAsync();
+        await Task.Run(async () => await _viewModel.ProcessBarcode(_barcode));
     }
     
 }

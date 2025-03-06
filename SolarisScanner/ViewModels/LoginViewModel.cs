@@ -1,8 +1,12 @@
 
+using System.Net;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Newtonsoft.Json.Linq;
+using RestSharp;
 using SolarisScanner.Models;
 using SolarisScanner.Services;
+using SolarisScanner.Views;
 using Debug = System.Diagnostics.Debug;
 
 namespace SolarisScanner.ViewModels;
@@ -10,23 +14,23 @@ namespace SolarisScanner.ViewModels;
 public partial class LoginViewModel : BaseViewModel
 {
     private readonly ILoginService _loginService;
-    private string _errorMessage;
-    public string ErrorMessage
+    private string? _errorMessage;
+    public string? ErrorMessage
     {
         get => _errorMessage;
         set
         {
             _errorMessage = value;
-            OnPropertyChanged();  // Assure-toi d'avoir INotifyPropertyChanged implémenté
+            OnPropertyChanged(); 
         }
     }
     public bool HasError => !string.IsNullOrEmpty(ErrorMessage);
 
     [ObservableProperty] 
-    string _username;
+    string? _username;
     
     [ObservableProperty]
-    string _password;
+    string? _password;
     
     public IRelayCommand LoginCommand { get; }
     
@@ -36,66 +40,43 @@ public partial class LoginViewModel : BaseViewModel
         LoginCommand = new RelayCommand(async () => await LoginAsync());
     }
 
-    public async Task LoginAsync()
+    private async Task LoginAsync()
     {
-        IsBusy = true; // Début de l'opération
+        IsBusy = true;
         try
         {
-            // Appel à LoginService pour tenter la connexion
-            User user = await _loginService.LoginAsync(Username, Password);
+            RestResponse response = await _loginService.LoginAsync(Username, Password);
 
-            // Logique après une connexion réussie (par exemple, stocker le token)
-            if (user != null && !string.IsNullOrEmpty(user.token))
+            if (!response.IsSuccessful)
             {
-                // Tu peux aussi stocker le token dans un service ou un store pour l'utiliser plus tard
-                // Exemple : _tokenService.SaveToken(user.Token);
-                await SecureStorage.SetAsync("user_token", user.token);
-                await SecureStorage.SetAsync("current_timestamp", DateTime.Now.ToString("o"));
-                
-                Application.Current.MainPage = new AppShell();
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    ErrorMessage = "Nom d'utilisateur ou mot de passe incorrect.";
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Une erreur est survenue", response.ErrorMessage, "OK");
+                }
             }
             else
             {
-                ErrorMessage = "Nom d'utilisateur ou mot de passe incorrect.";
-                HandleError("Erreur : Impossible de récupérer le token.");
-                // await Application.Current.MainPage.DisplayAlert("Erreur", "Nom d'utilisateur ou mot de passe incorrect.", "OK");
+                JObject jsonResponse = JObject.Parse(response.Content);
+                
+                User user = new User(jsonResponse["user"]?["token"]?.ToString() ?? "", jsonResponse["user"]?["name"]?.ToString() ?? "");
+                await SecureStorage.SetAsync("user_token", user.token);
+                await SecureStorage.SetAsync("current_timestamp", DateTime.Now.ToString("o"));
+                Application.Current.MainPage = new NavigationPage(new ScanPage());
             }
         }
         catch (Exception ex)
         {
             
-            HandleError("Erreur lors de la connexion : " + ex.Message);
+            throw new Exception(ex.Message);
         }
         finally
         {
-            IsBusy = false; // Fin de l'opération
+            IsBusy = false;
         }
     }
-    
-    private void HandleError(string errorMessage)
-    {
-        // Tu peux ajouter un message d'erreur à afficher dans l'interface ou journaliser l'erreur
-        Title = errorMessage;  // Exemple de mise à jour du titre avec le message d'erreur
 
-        // Si tu veux avoir un message plus détaillé dans une autre propriété, tu peux ajouter une nouvelle propriété Observable
-        // par exemple, une propriété "ErrorMessage" pour l'afficher dans la vue
-    }
-    
-    public async Task CheckForExistingUser()
-    {
-        var token = await SecureStorage.GetAsync("user_token");
-
-        if (!string.IsNullOrEmpty(token))
-        {
-            // Token trouvé, utilisateur déjà connecté
-            Title = "Utilisateur déjà connecté";
-            // Ici, tu peux également appeler une méthode pour récupérer l'utilisateur et son profil
-            // Exemple : await GetUserData(token);
-        }
-        else
-        {
-            // Pas de token, l'utilisateur doit se connecter
-            Title = "Veuillez vous connecter";
-        }
-    }
 }

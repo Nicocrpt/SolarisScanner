@@ -15,12 +15,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e593d18-5bb9-4288-9cd8-6755ee707712" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/pausescan.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/playscan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/AppIcon/appiconfg2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/autologooff.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/autologoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/autoscan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/check.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/eighteenlogo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/fail.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/flashoff.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/flashon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/lightqrlogo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/sixteenlogo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/twelvelogo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Splash/splashlogo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Services/InvertBool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolarisScanner/Tools/Transitions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Models/Reservation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Models/Reservation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainActivity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainActivity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Resources/AppIcon/appicon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Resources/AppIcon/appicon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Resources/Images/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Images/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Resources/Styles/Styles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Resources/Styles/Styles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/ILoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/ILoginService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/IReservationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/IReservationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/LoginService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/ReservationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/ReservationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/SolarisScanner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/SolarisScanner.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/LoginViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/MainViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/MainViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/ScanViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ScanViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/LoginPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/LoginPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/LoginPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/LoginPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/MainPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs" afterDir="false" />
     </list>
@@ -32,21 +64,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Nicocrpt"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Nicocrpt&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Nicocrpt/SolarisScanner.git",
-    "accountId": "4d69cb2f-70ee-455c-baa3-15c4bec63602"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Nicocrpt/SolarisScanner.git&quot;,
+    &quot;accountId&quot;: &quot;4d69cb2f-70ee-455c-baa3-15c4bec63602&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bff41c72e6acff5b390a6e4f899a56b47afff2/Resources_Styles_Colors.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainActivity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainActivity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainApplication.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
@@ -66,7 +98,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Android.SolarisScanner.executor": "Debug",
+    "Android.SolarisScanner.executor": "Run",
     "Device#class com.jetbrains.rider.run.multiPlatform.ios.devices.IOSSimulatorKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider#iOS: SolarisScanner": "iPhone 16",
     "DeviceKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider": "Simulator",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -118,7 +150,13 @@
       <option name="presentableId" value="Default" />
       <updated>1739114525374</updated>
       <workItem from="1739114526881" duration="2582000" />
-      <workItem from="1739131961649" duration="76454000" />
+      <workItem from="1739131961649" duration="105913000" />
+      <workItem from="1739526153266" duration="2996000" />
+      <workItem from="1739567081670" duration="10644000" />
+      <workItem from="1739738681927" duration="33969000" />
+      <workItem from="1740643591135" duration="480000" />
+      <workItem from="1740648808597" duration="11823000" />
+      <workItem from="1741170820999" duration="16409000" />
     </task>
     <servers />
   </component>
@@ -156,17 +194,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs</url>
-          <line>77</line>
-          <properties documentPath="$PROJECT_DIR$/SolarisScanner/Views/ScanPage.xaml.cs" containingFunctionPresentation="Method 'Button_OnClicked'">
+          <url>file://$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs</url>
+          <line>42</line>
+          <properties documentPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" containingFunctionPresentation="Method 'ProcessBarcode'">
             <startOffsets>
-              <option value="2211" />
+              <option value="976" />
             </startOffsets>
             <endOffsets>
-              <option value="2238" />
+              <option value="993" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="46" />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs</url>
+          <line>44</line>
+          <properties documentPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" containingFunctionPresentation="Method 'ProcessBarcode'">
+            <startOffsets>
+              <option value="1019" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1097" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

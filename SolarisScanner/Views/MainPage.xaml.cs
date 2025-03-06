@@ -1,4 +1,6 @@
-﻿using SolarisScanner.ViewModels;
+﻿using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Core.Platform;
+using SolarisScanner.ViewModels;
 
 namespace SolarisScanner.Views;
 
@@ -12,5 +14,10 @@ public partial class MainPage : ContentPage
         BindingContext = _viewModel;
     }
 
-    
+    protected override void OnAppearing()
+    {
+        StatusBar.SetStyle(StatusBarStyle.LightContent);
+        StatusBar.SetColor(Colors.Black);
+        base.OnAppearing();
+    }
 }

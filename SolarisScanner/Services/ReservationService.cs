@@ -1,3 +1,4 @@
+using System.Globalization;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using SolarisScanner.Models;
@@ -13,26 +14,13 @@ public class ReservationService : IReservationService
         _apiClient = new ApiClient();
     }
 
-    public async Task<Reservation> ProcessReservation(string reference)
+    public async Task<RestResponse> ProcessReservation(string reference)
     {
         try
         {
-            var body = new { reference = reference };
-            var response = await  _apiClient.PostAsync<RestResponse>("reservation/check", body, SecureStorage.GetAsync("user_token").Result);
-            JObject jsonResponse = JObject.Parse(response.Content);
-            if (jsonResponse.ContainsKey("success"))
-            {
-                return new Reservation(
-                    jsonResponse["success"]?.ToString(),
-                    jsonResponse["data"]["film"]["image"]?.ToString().Replace("original", "w500"),
-                    jsonResponse["data"]["film"]["titre"]?.ToString(),
-                    jsonResponse["data"]["salle"]?.ToString()
-                );
-            }
-            else
-            {
-                return new Reservation(jsonResponse["error"]?.ToString());
-            }
+            string datetime  = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture);
+            var body = new { reference = reference, datetime = datetime };
+            return await _apiClient.PostAsync<RestResponse>("reservation/check", body, SecureStorage.GetAsync("user_token").Result);
         }
         catch (Exception e)
         {

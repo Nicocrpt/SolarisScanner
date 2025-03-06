@@ -1,3 +1,5 @@
+using Newtonsoft.Json.Linq;
+using RestSharp;
 using SolarisScanner.Models;
 
 namespace SolarisScanner.Services;
@@ -5,5 +7,5 @@ namespace SolarisScanner.Services;
 public interface ILoginService
 {
     
-    Task<User> LoginAsync(string username, string password);
+    Task<RestResponse> LoginAsync(string username, string password);
 }

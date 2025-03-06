@@ -3,43 +3,159 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:scanner="clr-namespace:BarcodeScanning;assembly=BarcodeScanning.Native.Maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:AlohaKit.Animations="clr-namespace:AlohaKit.Animations;assembly=AlohaKit.Animations"
              x:Class="SolarisScanner.Views.ScanPage"
+             NavigationPage.HasNavigationBar="False"
              >
              
-    <VerticalStackLayout VerticalOptions="Fill" HorizontalOptions="Fill">
+    <Grid VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="Black" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
-        <!-- <ActivityIndicator IsRunning="{Binding IsLoading}"  -->
-        <!--                    IsVisible="{Binding IsLoading}"  -->
-        <!--                    Color="{AppThemeBinding Light=Black, Dark=White}" -->
-        <!--                    Margin="0,200,0,0" -->
-        <!--                    HorizontalOptions="Center" -->
-        <!--                    VerticalOptions="Center"/> -->
+        <scanner:CameraView
+            Margin="0,42,0,0"
+            x:Name="Scanner"
+            TorchOn="False"
+            Grid.Row="0"
+            BackgroundColor="Black"
+            BarcodeSymbologies="QRCode"
+            CameraEnabled="True"
+            ForceInverted="True"
+            CaptureQuality="High"
+            PauseScanning="False"
+            OnDetectionFinished="CameraView_OnOnDetectionFinished"/>
         
-        <Frame Margin="10,5" CornerRadius="6" HeightRequest="500"
-               WidthRequest="300" Padding="0" BorderColor="Black" IsClippedToBounds="True">
-            <scanner:CameraView
-                x:Name="Scanner"
-                BarcodeSymbologies="QRCode"
-                CameraEnabled="True"
-                ForceInverted="True"
-                CaptureQuality="High"
-                PauseScanning="False"
-                OnDetectionFinished="CameraView_OnOnDetectionFinished"/>
-        </Frame>
-        
-        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
-            <Button 
+        <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid  Grid.Column="0">
+                
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="25,0,0,10">
+                    <Frame CornerRadius="50"
+                           HeightRequest="30"
+                           WidthRequest="50"
+                           BackgroundColor="#272727"
+                           Padding="0"
+                           HasShadow="False"
+                           BorderColor="Transparent"
+                           x:Name="FlashFrame"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+    
+                        <!-- Contenu avec Grid -->
+                        <Grid HeightRequest="25" BackgroundColor="Transparent" Padding="2">
+                            <!-- Cercle mobile -->
+                            <Frame x:Name="FlashThumb"
+                                     BackgroundColor="#ABABAB"
+                                     BorderColor="Transparent"
+                                     CornerRadius="100"
+                                     HeightRequest="25"
+                                     WidthRequest="25"
+                                     Padding="2"
+                                     HorizontalOptions="Start">
+                                <Image
+                                    x:Name="FlashImage"
+                                    Source="flashoff.svg"/>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnFlashTapped"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            
+                            
+                        </Grid>
+                        
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnFlashTapped"/>
+                        </Frame.GestureRecognizers>
+                        
+                    </Frame>
+                    
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnFlashTapped"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+                
+            </Grid>
+            
+            <Button Grid.Column="1"
+                IsEnabled="True"
+                Margin="0,0,0,10"
                 x:Name="ToggleScanButton"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                ContentLayout="Left, 10"
-                ImageSource="pausescan.svg"
-                HeightRequest="50"
+                FontSize="15"
+                Opacity="1"
+                Padding="12,12"
+                ImageSource="qrlogo.svg"
+                HeightRequest="80"
+                WidthRequest="80"
+                BackgroundColor="LightGray"
                 FontAttributes="Bold"
-                BackgroundColor="DarkOrange"
-                Clicked="Button_OnClicked"
+                CornerRadius="50"
+                Pressed="ToggleScanButton_OnPressed"
+                Released="ToggleScanButton_OnReleased"
                 >
+            
             </Button>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+            
+            
+
+            
+            <Grid  Grid.Column="2">
+                
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,25,10">
+                    <Frame CornerRadius="20"
+                           HeightRequest="30"
+                           WidthRequest="50"
+                           BackgroundColor="#272727"
+                           Padding="0"
+                           HasShadow="False"
+                           BorderColor="Transparent"
+                           x:Name="SwitchFrame"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+    
+                        <!-- Contenu avec Grid -->
+                        <Grid x:Name="SwitchGrid" HeightRequest="25" BackgroundColor="Transparent" Padding="2">
+                            <!-- Cercle mobile -->
+                            <Frame x:Name="Thumb"
+                                   Padding="2"
+                                     BackgroundColor="#ABABAB"
+                                     BorderColor="Transparent"
+                                     CornerRadius="100"
+                                    HeightRequest="25"
+                                    WidthRequest="25"
+                                     HorizontalOptions="Start">
+                                <Image
+                                    x:Name="ThumbImage"
+                                    Source="autologooff.svg"/>
+                                
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </Grid>
+                        
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                        </Frame.GestureRecognizers>
+                        
+                    </Frame>
+                    
+                    
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+                
+            </Grid>
+        </Grid>
+    </Grid>
 </ContentPage>

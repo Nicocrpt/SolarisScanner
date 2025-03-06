@@ -41,10 +41,14 @@
 
     <ItemGroup>
         <!-- App Icon -->
-        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4"/>
+        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg2.svg" ForegroundScale="0.55" Color="#512BD4"/>
+        <MauiSplashScreen Include="Resources\Splash\splashlogo.svg">
+          <Color>Black</Color>
+          <BaseSize>128,128</BaseSize>
+        </MauiSplashScreen>
 
         <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128"/>
+        <MauiSplashScreen Include="Resources\Splash\splashlogo.svg" Color="Black" BaseSize="128" />
 
         <!-- Images -->
         <MauiImage Include="Resources\Images\*"/>
@@ -58,6 +62,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="AlohaKit.Animations" Version="1.1.0" />
         <PackageReference Include="BarcodeScanning.Native.Maui" Version="1.7.3" />
         <PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
@@ -79,6 +84,13 @@
         <DependentUpon>MainPage.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiSplashScreen Include="Resources\Splash\splashlogo.svg">
+        <Color>#512BD4</Color>
+        <BaseSize>128,128</BaseSize>
+      </MauiSplashScreen>
     </ItemGroup>
 
 </Project>

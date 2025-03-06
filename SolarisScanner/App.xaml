@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:SolarisScanner"
              x:Class="SolarisScanner.App">
     <Application.Resources>
-        <ResourceDictionary>
+        <ResourceDictionary xmlns:services="clr-namespace:SolarisScanner.Services">
+            <services:InvertBool x:Key="InverseBoolConverter"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />

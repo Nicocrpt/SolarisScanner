@@ -25,14 +25,14 @@
                     HeightRequest="150" 
                     WidthRequest="150" 
                     HorizontalOptions="Center"/>
-                <Label Text="{Binding Reservation.Status}"  HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="25" TextColor="White" HorizontalOptions="FillAndExpand"/>
+                <Label Text="{Binding Reservation.Status}"  HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="21" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"/>
             </VerticalStackLayout>
             
             <VerticalStackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <HorizontalStackLayout Margin="10, 0">
-                    <Label Text="{Binding Reservation.MovieTitle}" HorizontalTextAlignment="Center" FontSize="35" FontAttributes="Bold" Padding="0,20,0,10" TextColor="White" LineBreakMode="WordWrap"/>
-                    <Image Source="{Binding AgeLogo}" HeightRequest="35" WidthRequest="35"/>
-                </HorizontalStackLayout>
+                <VerticalStackLayout Margin="10, 0">
+                    <Label Text="{Binding Reservation.MovieTitle}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" Padding="0,20,0,10" TextColor="White" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="{Binding Reservation.SessionDatetime}" Margin="0, 10, 0, 0" HorizontalTextAlignment="Center" FontSize="20" TextColor="White" HorizontalOptions="FillAndExpand"/>
+                </VerticalStackLayout>
                 <Label Text="{Binding Reservation.SessionRoom}" HorizontalTextAlignment="Center" FontSize="30" TextColor="White"></Label>
                 <Label Text="{Binding Reservation.NbPlaces}" HorizontalTextAlignment="Center" FontSize="25" TextColor="White"/>
             </VerticalStackLayout>

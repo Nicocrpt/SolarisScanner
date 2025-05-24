@@ -33,6 +33,7 @@ public partial class ResultViewModel: BaseViewModel
         IsLoading = true;
         _navigation = navigation;
         _reservationService = new ReservationService();
+        statusColor = Color.FromRgb(255, 255, 255);
     }
     
     
@@ -44,23 +45,38 @@ public partial class ResultViewModel: BaseViewModel
             
             RestResponse response = await _reservationService.ProcessReservation(barcode);
             JObject jsonResponse = JObject.Parse(response.Content);
-            if (jsonResponse.ContainsKey("success"))
+            if ((int) jsonResponse["responseCode"] >= 2000)
             {
                 Reservation = new Reservation(
-                    jsonResponse["success"]?.ToString(),
+                    jsonResponse["message"]?.ToString(),
                     jsonResponse["data"]["film"]["image"]?.ToString().Replace("original", "w500"),
                     jsonResponse["data"]["film"]["titre"]?.ToString(),
                     jsonResponse["data"]["salle"]?.ToString(),
-                    jsonResponse["data"]["places"] + " Places"
+                    jsonResponse["data"].Contains("places") ? jsonResponse["data"]["places"] + " Place(s)" : null,
+                    jsonResponse["data"]["datetimeSeance"]?.ToString()
                 );
             }
             else
             {
-                Reservation = new Reservation(jsonResponse["error"]?.ToString());
+                Reservation = new Reservation(jsonResponse["message"]?.ToString());
+            }
+
+            switch ((int) jsonResponse["responseCode"])
+            {
+                case 3000:
+                    StatusColor = Color.FromArgb("#fbc64b");
+                    Icon = ImageSource.FromFile("fail.svg");
+                    break;
+                case 2000:
+                    StatusColor = Color.FromArgb("#1DA747");
+                    Icon = ImageSource.FromFile("check.svg");
+                    break;
+                default:
+                    StatusColor = Color.FromArgb("#fb5d4b");
+                    Icon = ImageSource.FromFile("fail.svg");
+                    break;
             }
             
-            StatusColor = !Reservation.Status.Contains("déjà") ? Color.FromArgb("#1DA747") : Color.FromArgb("#fb5d4b");
-            Icon = !Reservation.Status.Contains("déjà")? ImageSource.FromFile("check.svg") : ImageSource.FromFile("fail.svg");
             IsLoading = false;
         }
         catch (Exception ex)

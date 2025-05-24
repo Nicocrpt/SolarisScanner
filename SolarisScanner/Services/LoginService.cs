@@ -14,11 +14,11 @@ public class LoginService : ILoginService
         _apiClient = new ApiClient();
     }
     
-    public async Task<RestResponse> LoginAsync(string username, string password)
+    public async Task<RestResponse> LoginAsync(string email, string password)
     {
         try
         {
-            var body = new { name = username, password = password };
+            var body = new { email = email, password = password };
             return await _apiClient.PostAsync<RestResponse>("getAuth", body);
         }
         catch (Exception ex)

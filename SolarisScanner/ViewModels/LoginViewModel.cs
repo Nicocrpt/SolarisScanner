@@ -27,7 +27,7 @@ public partial class LoginViewModel : BaseViewModel
     public bool HasError => !string.IsNullOrEmpty(ErrorMessage);
 
     [ObservableProperty] 
-    string? _username;
+    string? _email;
     
     [ObservableProperty]
     string? _password;
@@ -45,7 +45,7 @@ public partial class LoginViewModel : BaseViewModel
         IsBusy = true;
         try
         {
-            RestResponse response = await _loginService.LoginAsync(Username, Password);
+            RestResponse response = await _loginService.LoginAsync(Email, Password);
 
             if (!response.IsSuccessful)
             {

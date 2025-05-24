@@ -7,5 +7,5 @@ namespace SolarisScanner.Services;
 public interface ILoginService
 {
     
-    Task<RestResponse> LoginAsync(string username, string password);
+    Task<RestResponse> LoginAsync(string email, string password);
 }

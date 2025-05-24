@@ -1,16 +1,9 @@
 
-using System.ComponentModel;
-using System.Diagnostics;
 using BarcodeScanning;
-using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Core.Platform;
-using Microsoft.Maui.Animations;
-using Microsoft.Maui.Controls.PlatformConfiguration;
-using SolarisScanner.Models;
 using SolarisScanner.Tools;
 using SolarisScanner.ViewModels;
-using Animation = Microsoft.Maui.Controls.Animation;
 
 
 namespace SolarisScanner.Views;

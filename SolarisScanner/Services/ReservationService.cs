@@ -18,9 +18,10 @@ public class ReservationService : IReservationService
     {
         try
         {
-            string datetime  = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture);
+            string datetime  = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss", CultureInfo.InvariantCulture);
             var body = new { reference = reference, datetime = datetime };
-            return await _apiClient.PostAsync<RestResponse>("reservation/check", body, SecureStorage.GetAsync("user_token").Result);
+            string? token = await SecureStorage.GetAsync("user_token");
+            return await _apiClient.PostAsync<RestResponse>("reservation/check", body, token);
         }
         catch (Exception e)
         {

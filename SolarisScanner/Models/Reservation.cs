@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace SolarisScanner.Models;
 
 public class Reservation
@@ -16,8 +18,15 @@ public class Reservation
         this.Status = status;
         this.MoviePoster = moviePoster;
         this.MovieTitle = movieTitle;
-        this.SessionDatetime = sessionDatetime;
         this.SessionRoom = sessionRoom;
         this.NbPlaces = nbPlaces;
+        
+        try {
+            var dto = DateTimeOffset.Parse(sessionDatetime, null, DateTimeStyles.RoundtripKind);
+            this.SessionDatetime = dto.ToString("dd/MM/yyyy HH\\hmm", CultureInfo.InvariantCulture);
+        }
+        catch {
+            this.SessionDatetime = null;
+        }
     }
 }

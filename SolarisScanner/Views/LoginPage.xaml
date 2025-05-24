@@ -3,6 +3,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SolarisScanner.Views.LoginPage"
+             BackgroundColor="White"
              >
 
        <Grid Padding="0,80,0, 0">
@@ -24,20 +25,22 @@
                             
 
                      </Image>
-                     <Label Text="SOLARIS SCANNER" FontSize="20" FontFamily="logoFont" Margin="0,20,0,0"/>
+                     <Label Text="SOLARIS SCANNER" FontSize="20" TextColor="Black" FontFamily="logoFont" Margin="0,20,0,0"/>
               </StackLayout>
               <StackLayout Padding="20, 100, 20, 20" VerticalOptions="Start" Grid.Row="1">
               
                      <!-- Champ pour le nom d'utilisateur -->
-                     <Entry Placeholder="Nom d'utilisateur" 
+                     <Entry Placeholder="Adresse Email" 
                             
-                            Text="{Binding Username}" 
+                            Text="{Binding Email}" 
                             Keyboard="Email" 
+                            TextColor="Black"
                             Margin="0,0,0,10"/>
 
                      <!-- Champ pour le mot de passe -->
                      <Entry Placeholder="Mot de passe" 
                             Text="{Binding Password}" 
+                            TextColor="Black"
                             IsPassword="True" 
                             Margin="0,0,0,10"/>
 
@@ -45,8 +48,8 @@
                      <Button Text="Se connecter" 
                              Command="{Binding LoginCommand}" 
                              IsEnabled="{Binding IsNotBusy}" 
-                             BackgroundColor="{AppThemeBinding Light=Black, Dark=White}" 
-                             TextColor="{AppThemeBinding Light=White, Dark=Black}" 
+                             BackgroundColor="Black" 
+                             TextColor="White" 
                              Margin="0,0,0,10"
                              CornerRadius="4"/>
 
@@ -63,7 +66,7 @@
                             HorizontalTextAlignment="Center"/>
               </StackLayout>
               <StackLayout Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center">
-                     <Label  Text="Copyright Nicolas Carpita" FontSize="10"/>
+                     <Label  Text="Copyright Nicolas Carpita" FontSize="10" TextColor="Black"/>
               </StackLayout>
               
        </Grid>

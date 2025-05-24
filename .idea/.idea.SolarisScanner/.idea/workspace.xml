@@ -14,17 +14,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e593d18-5bb9-4288-9cd8-6755ee707712" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Models/Reservation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Models/Reservation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/ILoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/ILoginService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/LoginService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/ReservationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/ReservationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/LoginViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/ViewModels/ResultViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/LoginPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/LoginPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Views/ResultPage.xaml" afterDir="false" />
-    </list>
+    <list default="true" id="0e593d18-5bb9-4288-9cd8-6755ee707712" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +137,7 @@
       <workItem from="1745499936635" duration="7988000" />
       <workItem from="1746446767883" duration="14284000" />
       <workItem from="1746605742013" duration="3858000" />
-      <workItem from="1748094301264" duration="6617000" />
+      <workItem from="1748094301264" duration="7231000" />
     </task>
     <servers />
   </component>

@@ -14,7 +14,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e593d18-5bb9-4288-9cd8-6755ee707712" name="Changes" comment="" />
+    <list default="true" id="0e593d18-5bb9-4288-9cd8-6755ee707712" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolarisScanner/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolarisScanner/Services/ReservationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SolarisScanner/Services/ReservationService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +44,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bff41c72e6acff5b390a6e4f899a56b47afff2/Resources_Styles_Colors.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainActivity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SolarisScanner/Platforms/Android/MainApplication.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SolarisScanner/ViewModels/BaseViewModel.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -55,24 +61,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android.SolarisScanner.executor": "Debug",
-    "Device#class com.jetbrains.rider.run.multiPlatform.ios.devices.IOSSimulatorKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider#iOS: SolarisScanner": "iPhone 16",
-    "DeviceKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider": "Simulator",
-    "Publish to folder.Publish SolarisScanner to folder.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "HotReloadSettingsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android.SolarisScanner.executor&quot;: &quot;Run&quot;,
+    &quot;Device#class com.jetbrains.rider.run.multiPlatform.ios.devices.IOSSimulatorKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider#iOS: SolarisScanner&quot;: &quot;iPhone 16&quot;,
+    &quot;DeviceKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider&quot;: &quot;Simulator&quot;,
+    &quot;Publish to folder.Publish SolarisScanner to folder.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Android.SolarisScanner">
     <configuration name="Publish SolarisScanner to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" platform="Any CPU" self_contained="true" target_folder="$PROJECT_DIR$/SolarisScanner/bin/Release/net8.0-android/publish" target_framework="net8.0-android" uuid_high="-2082807286402167873" uuid_low="-8077087101102350624">
@@ -137,7 +143,8 @@
       <workItem from="1745499936635" duration="7988000" />
       <workItem from="1746446767883" duration="14284000" />
       <workItem from="1746605742013" duration="3858000" />
-      <workItem from="1748094301264" duration="7231000" />
+      <workItem from="1748094301264" duration="12730000" />
+      <workItem from="1748166580459" duration="2327000" />
     </task>
     <servers />
   </component>

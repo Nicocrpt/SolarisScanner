@@ -19,7 +19,7 @@ public partial class App : Application
             DateTime savedDate = DateTime.Parse(timestamp);
             TimeSpan difference = DateTime.Now.ToLocalTime() - savedDate;
             
-            isIdentified = difference.TotalHours < 1 ? true : false;
+            isIdentified = difference.TotalMinutes < 30 ? true : false;
         }
 
         if (isIdentified)
